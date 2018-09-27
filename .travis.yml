@@ -14,7 +14,7 @@ before_install:
   - docker cp . ubuntu:/STL;
   - docker exec ubuntu apt-get update;
   - docker exec ubuntu apt-get -y upgrade;
-  - docker exec ubuntu apt-get -y install sudo build-essential cmake;
+  - docker exec ubuntu apt-get -y install sudo build-essential cmake curl;
 
 script:
   ############################################################################
