@@ -6,6 +6,10 @@ language: cpp
 services:
   - docker
 
+cache:
+  directories:
+  - /STL/Testing
+
 before_install:
   - docker pull ubuntu:latest;
   - docker run -d --name ubuntu -dti ubuntu:latest bash;
