@@ -8,7 +8,7 @@ services:
 
 cache:
   directories:
-  - /STL/Testing
+  - ./Testing
 
 before_install:
   - docker pull ubuntu:latest;
@@ -27,4 +27,5 @@ script:
   - docker exec ubuntu /bin/bash -c 'cd /STL; cmake .'
   - docker exec ubuntu /bin/bash -c 'cd /STL; cmake --build .'
   - docker exec ubuntu /bin/bash -c 'cd /STL; ctest'
+  - docker cp ubuntu:/STL/Testing .;
 
