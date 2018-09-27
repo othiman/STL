@@ -24,4 +24,7 @@ script:
   - docker exec ubuntu /bin/bash -c 'cd /STL; cmake --build .'
   - docker exec ubuntu /bin/bash -c 'cd /STL; ctest'
   - docker exec ubuntu /bin/bash -c 'cd /STL; cat Testing/Temporary/CTestCostData.txt Testing/Temporary/LastTest.log Testing/Temporary/LastTestsFailed.log'
+  - docker exec ubuntu /bin/bash -c 'curl -u travis:Aachen123 -T /STL/Testing/Temporary/CTestCostData.txt "https://owncloud.schlien.me/owncloud/remote.php/dav/files/travis/logs/CTestCostData.txt"'
+  - docker exec ubuntu /bin/bash -c 'curl -u travis:Aachen123 -T /STL/Testing/Temporary/LastTestsFailed.log "https://owncloud.schlien.me/owncloud/remote.php/dav/files/travis/logs/LastTestsFailed.log"'
+  - docker exec ubuntu /bin/bash -c 'curl -u travis:Aachen123 -T /STL/Testing/Temporary/LastTest.log "https://owncloud.schlien.me/owncloud/remote.php/dav/files/travis/logs/LastTest.log"'
 
