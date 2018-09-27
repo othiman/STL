@@ -23,5 +23,5 @@ script:
   - docker exec ubuntu /bin/bash -c 'cd /STL; cmake .'
   - docker exec ubuntu /bin/bash -c 'cd /STL; cmake --build .'
   - docker exec ubuntu /bin/bash -c 'cd /STL; ctest'
-  - docker exec ubuntu /bin/bash -c 'cd /STL; cat Testing/CTestCostData.txt Testing/LastTest.log Testing/LastTestsFailed.log'
+  - docker exec ubuntu /bin/bash -c 'cd /STL; cat Testing/Temporary/CTestCostData.txt Testing/Temporary/LastTest.log Testing/Temporary/LastTestsFailed.log'
 
