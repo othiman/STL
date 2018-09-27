@@ -6,10 +6,6 @@ language: cpp
 services:
   - docker
 
-cache:
-  directories:
-  - ./Testing
-
 before_install:
   - docker pull ubuntu:latest;
   - docker run -d --name ubuntu -dti ubuntu:latest bash;
@@ -27,5 +23,5 @@ script:
   - docker exec ubuntu /bin/bash -c 'cd /STL; cmake .'
   - docker exec ubuntu /bin/bash -c 'cd /STL; cmake --build .'
   - docker exec ubuntu /bin/bash -c 'cd /STL; ctest'
-  - docker cp ubuntu:/STL/Testing .;
+  - docker exec ubuntu /bin/bash -c 'cd /STL; cat Testing/CTestCostData.txt Testing/LastTest.log Testing/LastTestsFailed.log'
 
