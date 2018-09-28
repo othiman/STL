@@ -89,7 +89,7 @@ add_test(pshar1-3verify ${CMAKE_COMMAND} -E compare_files file3.txt test_data/fi
 add_test(pshar1-4verify ${CMAKE_COMMAND} -E compare_files file4.txt test_data/file4-o.txt)
 add_test(pshar1-5verify ${CMAKE_COMMAND} -E compare_files file5.txt test_data/file5-o.txt)
 
-add_test(NAME xdecode1 COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/xdecode voicet.uue WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/test_data)
+add_test(NAME xdecode1 COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/xdecode voice.uue WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/test_data)
 add_test(xdecode1-verify ${CMAKE_COMMAND} -E compare_files test_data/voice.rec test_data/voice.ori)
 
 add_test(NAME xencode1 COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/xencode voice.rec v.uue 7 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/test_data)
